@@ -24,8 +24,8 @@ echo ---------------------------------------------------------------------------
             sh '''echo "Clean Microservice Containers"
 
 docker stop orderservicems || true
-docker stop productms || true
-docker stop customerms || true
+docker stop producservicems || true
+docker stop customerservicems || true
 
 docker stop ordermg || true
 docker stop productmg || true
