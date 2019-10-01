@@ -23,19 +23,13 @@ echo ---------------------------------------------------------------------------
 '''
             sh '''echo "Clean Microservice Containers"
 
-#docker ps -a | grep orderservice: |  cut -d" " -f1
-
-runningCount=`docker ps -a -q --filter ancestor=orderservice:ci | wc -l`
-
-if [ $runningCount -gt 0 ]; then
-   docker stop $(docker ps -a -q --filter ancestor=orderservice:ci --format="{{.ID}}") > /dev/nul
-else
-   echo "No MS Containers running"
-fi
-
+docker stop orderservicems || true
+docker stop productservicems || true
+docker stop customerservicems || true
 
 docker stop ordermg || true
-docker stop orderservicems || true
+docker stop productmg || true
+docker stop customermg || true
 
 echo "Clean Test Containers"
 
