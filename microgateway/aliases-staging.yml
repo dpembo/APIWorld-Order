@@ -1,3 +1,9 @@
+api_gateway:
+   url: http://apiworldref:5555/rest/apigateway
+   user: Administrator
+   password: "manage"
+---
+
 aliases:
   MicroServiceAlias:
     type: simple
